@@ -373,6 +373,11 @@ function write_blueprint_packages() {
         EXTENSION=${BASENAME##*.}
         PKGNAME=${BASENAME%.*}
 
+        if [ "$CLASS" = "EXECUTABLES" ] && [ "$EXTENSION" != "sh" ]; then
+            PKGNAME="$BASENAME"
+            EXTENSION=""
+        fi
+
         # Add to final package list
         PACKAGE_LIST+=("$PKGNAME")
 
