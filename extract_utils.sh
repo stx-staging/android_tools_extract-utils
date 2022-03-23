@@ -96,6 +96,8 @@ function setup_vendor() {
 
     export BINARIES_LOCATION="$ANDROID_ROOT"/prebuilts/extract-tools/${HOST}-x86/bin
 
+    export SIGSCAN="$BINARIES_LOCATION"/SigScan
+
     for version in 0_8 0_9; do
         export PATCHELF_${version}="$BINARIES_LOCATION"/patchelf-"${version}"
     done
